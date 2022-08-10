@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/news_model.dart';
-// import 'package:news_app/widgets/webview.dart';
+import 'package:news_app/widgets/webview.dart';
 
 class NewsItem extends StatelessWidget {
   final NewsModel _news;
   NewsItem(this._news);
 
-  // inform(String webUrl, BuildContext context) {
-  //   Navigator.push(
-  //       context, MaterialPageRoute(builder: (context) => Webview(webUrl)));
-  // }
+  _openNewsUrl(final String url, BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Webview(url)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,8 @@ class NewsItem extends StatelessWidget {
         margin: EdgeInsets.only(left: 5, right: 5, top: 10, bottom: 10),
         elevation: 2,
         child: GestureDetector(
-          onTap: () {}, //inform(_url, context),
+          onTap: () =>
+              _openNewsUrl(_news.sourceUrl, context), //inform(_url, context),
           child: Container(
               width: double.infinity,
               child: Column(

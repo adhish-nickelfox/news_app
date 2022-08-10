@@ -25,6 +25,7 @@ class _NewsAppState extends State<NewsApp> {
     super.initState();
     newsList = Provider().getNews(_selectedSourceList);
     sourceList = Provider().getSources();
+    //add compute/isolate
   }
 
   updateSource(Source sourceSelected) {}
@@ -62,7 +63,6 @@ class _NewsAppState extends State<NewsApp> {
 
                               newsList =
                                   Provider().getNews(_selectedSourceList);
-                              // sourceList = Provider().getSources();
                             });
                           },
                           child: SourceItem(s));
