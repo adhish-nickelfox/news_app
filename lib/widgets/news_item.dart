@@ -46,32 +46,31 @@ class NewsItem extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          _news.sourceName,
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12),
-                        ),
-                        Text(
-                          _news.publishedTime.isNotEmpty
-                              ? _news.publishedTime.substring(0, 10)
-                              : '',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12),
-                        ),
-                      ],
+                    width: double.infinity,
+                    margin: EdgeInsets.all(10),
+                    child: Text(
+                      'Author: ${_news.sourceName}',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 12),
                     ),
-                  )
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.all(10),
+                    child: Text(
+                      _news.publishedTime.isNotEmpty
+                          ? 'Published: ${_news.publishedTime.substring(0, 10)}'
+                          : '',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 12),
+                    ),
+                  ),
                 ],
               )),
         ));

@@ -13,7 +13,7 @@ class Provider {
   Future<List<NewsModel>> getNews(List<Source> source) async {
     String url;
     if (source.isEmpty) {
-      url = '$_BASE_URL?country=us&apiKey=$_API_KEY';
+      url = '$_BASE_URL?country=in&apiKey=$_API_KEY';
     } else {
       List<String> _sources = source.map(
         (s) {
